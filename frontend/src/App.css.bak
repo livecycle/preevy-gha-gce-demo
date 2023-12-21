@@ -16,6 +16,12 @@
 
 .App-header {
   background-color: #282c34;
+
+  background-image: url(https://s3.eu-central-1.amazonaws.com/lc-public/demo-bret-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;

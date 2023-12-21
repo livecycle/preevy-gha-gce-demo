@@ -14,7 +14,7 @@ jobs:
   deploy:
     environment:
       name: pr-${{ github.event.number }}
-      url: ${{ fromJson(steps.preevy_up.outputs.url-urls-map).frontend[3000] }}
+      url: ${{ fromJson(steps.preevy_up.outputs.urls-map).frontend[3000] }}
 
     runs-on: ubuntu-latest
     steps:
@@ -28,12 +28,13 @@ jobs:
       - uses: livecycle/preevy-up-action@v2.3.0
         id: preevy_up
         with:
+          install: gh-release
           profile-url: ${{ vars.PREEVY_PROFILE_URL }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: link environment to livecycle
         env:
-          LIVECYCLE_API_KEY: ${{ github.secrets.LIVECYCLE_API_KEY }}
-          PREVIEW_URL: ${{ fromJson(steps.preevy_up.outputs.url-urls-map).frontend[3000] }}
+          LIVECYCLE_API_KEY: ${{ secrets.LIVECYCLE_API_KEY }}
+          PREVIEW_URL: ${{ fromJson(steps.preevy_up.outputs.urls-map).frontend[3000] }}
         run: npx @livecycle/cli link --url=$PREVIEW_URL --from-git=. --api-key=$LIVECYCLE_API_KEY

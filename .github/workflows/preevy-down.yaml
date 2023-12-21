@@ -25,6 +25,7 @@ jobs:
       - uses: livecycle/preevy-down-action@v1.3.0
         with:
           profile-url: ${{ vars.PREEVY_PROFILE_URL }}
+          install: gh-release
           args: "--force"
 
       #
