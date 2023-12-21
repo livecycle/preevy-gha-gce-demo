@@ -22,10 +22,10 @@ jobs:
         with:
           credentials_json: '${{ secrets.PREEVY_SA_KEY }}'
 
-      - uses: livecycle/preevy-down-action@v1.2.0
+      - uses: livecycle/preevy-down-action@v1.3.0
         with:
           profile-url: ${{ vars.PREEVY_PROFILE_URL }}
-          args: "--wait --force"
+          args: "--force"
 
       #
       # OPTIONAL: delete GH deployments and environments
