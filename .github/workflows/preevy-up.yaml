@@ -25,11 +25,12 @@ jobs:
         with:
           credentials_json: '${{ secrets.PREEVY_SA_KEY }}'
 
-      - uses: livecycle/preevy-up-action@v2.3.0
+      - uses: livecycle/preevy-up-action@c291b8d7348b1af0fa3a61abc9484b5f2e1e4aa2
         id: preevy_up
         with:
           install: gh-release
           profile-url: ${{ vars.PREEVY_PROFILE_URL }}
+          working-directory: ./frontend
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
