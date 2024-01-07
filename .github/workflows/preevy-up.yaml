@@ -25,7 +25,7 @@ jobs:
         with:
           credentials_json: '${{ secrets.PREEVY_SA_KEY }}'
 
-      - uses: livecycle/preevy-up-action@v2.3.0
+      - uses: livecycle/preevy-up-action@735f478090fc1b932edba03b56e28c6e2ac9c43e
         id: preevy_up
         with:
           install: gh-release

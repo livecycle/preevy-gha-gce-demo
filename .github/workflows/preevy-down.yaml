@@ -22,7 +22,7 @@ jobs:
         with:
           credentials_json: '${{ secrets.PREEVY_SA_KEY }}'
 
-      - uses: livecycle/preevy-down-action@v1.3.0
+      - uses: livecycle/preevy-down-action@2ba0bcdc84fcb1d2df97959683cc8b6e8eab6414
         with:
           profile-url: ${{ vars.PREEVY_PROFILE_URL }}
           install: gh-release
